@@ -1,7 +1,7 @@
 open-browser-unicode.vim
 ------------------------
 
-Opens Unicode character information quickly from Vim.
+Opens [Unicode character information](http://www.fileformat.info/info/unicode/index.htm) quickly from Vim.
 
 ```vim
 " Opens the page of the character under current cursor
