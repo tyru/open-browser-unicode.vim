@@ -8,8 +8,7 @@ Opens [Unicode character information](http://www.fileformat.info/info/unicode/in
 :OpenBrowserUnicode
 
 " Opens http://www.fileformat.info/info/unicode/char/21ba/
-:OpenBrowserUnicode 0x21ba
-:OpenBrowserUnicode x21ba
+:OpenBrowserUnicode U+21ba
 
 " Opens http://www.fileformat.info/info/unicode/char/21ba/
 :OpenBrowserUnicode ↺

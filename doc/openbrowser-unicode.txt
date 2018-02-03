@@ -39,7 +39,7 @@ COMMANDS					*openbrowser-unicode-commands* {{{
 
 									*:OpenBrowserUnicode*
 1. :OpenBrowserUnicode
-2. :OpenBrowserUnicode 0x{hex} or :OpenBrowserUnicode x{hex}
+2. :OpenBrowserUnicode U+{hex}
 3. :OpenBrowserUnicode {char}
 
 	Opens a unicode character information of given character if specified, or
@@ -49,21 +49,21 @@ COMMANDS					*openbrowser-unicode-commands* {{{
 	cursor.
 >
 	" Opens the page of the character under current cursor
-	OpenBrowserUnicode
+	:OpenBrowserUnicode
 <
-	If arguments were given, and it is prefixed with "0x" or "x" and
-	subsequent characters are all of hex-characters (|/\x|), 2nd form is
-	applied. Then this command opens a page of the hex-encoded character.
+	If arguments were given, and it is prefixed with "U+" and subsequent
+	characters are all of hex-characters (|/\x|), 2nd form is applied. Then
+	this command opens a page of the hex-encoded character.
 >
 	" Opens http://www.fileformat.info/info/unicode/char/21ba/
-	OpenBrowserUnicode 0x21ba
-	OpenBrowserUnicode x21ba
+	:OpenBrowserUnicode U+21ba
 <
 	If arguments were given and 2nd form is NOT applied, the 3rd form is
-	applied. Then this command opens a page of the character.
+	applied. Then this command opens a page of the character. If {char} is
+	a string of 2 more than characters, the first character is used.
 >
 	" Opens http://www.fileformat.info/info/unicode/char/21ba/
-	OpenBrowserUnicode ↺
+	:OpenBrowserUnicode ↺
 <
 }}}
 }}}

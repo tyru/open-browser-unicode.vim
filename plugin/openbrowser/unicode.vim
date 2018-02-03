@@ -38,9 +38,8 @@ endfunction
 
 function! s:cmd_open(...) abort
   if a:0
-    if a:1 =~# '^0?x\x\+'
-      let hex = substitute(a:1, '^0\?', '0', '')
-      let c = nr2char(+hex)
+    if a:1 =~# '^U+\x\+$'
+      let c = nr2char(+('0x' . a:1[2:]))
     else
       let c = matchstr(a:1, '^.')
     endif
