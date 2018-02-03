@@ -37,7 +37,16 @@ function! s:get_current_char() abort
 endfunction
 
 function! s:cmd_open(...) abort
-  let c = a:0 ? a:1 : s:get_current_char()
+  if a:0
+    if a:1 =~# '^0?x\x\+'
+      let hex = substitute(a:1, '^0\?', '0', '')
+      let c = nr2char(+hex)
+    else
+      let c = matchstr(a:1, '^.')
+    endif
+  else
+    let c = s:get_current_char()
+  endif
   execute 'OpenBrowserSearch -fileformat' printf('%x', char2nr(c))
 endfunction
 
