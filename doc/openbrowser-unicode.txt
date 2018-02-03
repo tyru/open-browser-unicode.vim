@@ -33,6 +33,8 @@ INTRODUCTION						*openbrowser-unicode-introduction* {{{
 Opens Unicode character information from Vim
 on https://www.fileformat.info/ website.
 
+See |:OpenBrowserUnicode| for the example.
+
 }}}
 ==============================================================================
 REQUIREMENTS						*openbrowser-unicode-requirements* {{{
@@ -46,10 +48,34 @@ INTERFACE				*openbrowser-unicode-interface* {{{
 ------------------------------------------------------------------------------
 COMMANDS					*openbrowser-unicode-commands* {{{
 
-:OpenBrowserUnicode [{char}]					*:OpenBrowserUnicode*
-	Opens a unicode character information of given character if specified,
-	or current cursor character if not specified.
+									*:OpenBrowserUnicode*
+1. :OpenBrowserUnicode
+2. :OpenBrowserUnicode 0x{hex} or :OpenBrowserUnicode x{hex}
+3. :OpenBrowserUnicode {char}
 
+	Opens a unicode character information of given character if specified, or
+	current cursor character if not specified.
+
+	On 1st form, this command opens a page of the character under current
+	cursor.
+>
+	" Opens the page of the character under current cursor
+	OpenBrowserUnicode
+<
+	If arguments were given, and it is prefixed with "0x" or "x" and
+	subsequent characters are all of hex-characters (|/\x|), 2nd form is
+	applied. Then this command opens a page of the hex-encoded character.
+>
+	" Opens http://www.fileformat.info/info/unicode/char/21ba/
+	OpenBrowserUnicode 0x21ba
+	OpenBrowserUnicode x21ba
+<
+	If arguments were given and 2nd form is NOT applied, the 3rd form is
+	applied. Then this command opens a page of the character.
+>
+	" Opens http://www.fileformat.info/info/unicode/char/21ba/
+	OpenBrowserUnicode ↺
+<
 }}}
 }}}
 ==============================================================================
