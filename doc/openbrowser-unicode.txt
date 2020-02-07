@@ -24,7 +24,7 @@ on https://www.fileformat.info/ website.
 
 Below mapping opens the current character information on cursor in web browser.
 >
-	nmap gA :<C-u>OpenBrowserUnicode<CR>
+	nnoremap gA :<C-u>OpenBrowserUnicode<CR>
 
 See |:OpenBrowserUnicode| for the example.
 
